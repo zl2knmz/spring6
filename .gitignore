@@ -2,3 +2,5 @@
 .idea/
 
 *.class
+
+spring6-001-revelation/target/classes/
