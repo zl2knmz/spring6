@@ -16,7 +16,7 @@ import java.util.Date;
 public class FirstSpringTest {
 
     @Test
-    public void testFirstSpringCode(){
+    public void testFirstSpringCode() {
 
         // 第一步：获取Spring容器对象
         // ApplicationContext 翻译为：应用上下文，其实就是SPring容器。
@@ -51,14 +51,14 @@ public class FirstSpringTest {
      * 这种方式很少用，了解即可
      */
     @Test
-    public void testXmlPath(){
+    public void testXmlPath() {
         ApplicationContext ac = new FileSystemXmlApplicationContext("D:\\Program Files\\development\\GitHubProjects\\spring6\\spring6-002-first\\src\\main\\resources\\spring.xml");
         Date nowDate = ac.getBean("nowDate", Date.class);
         System.out.println(nowDate);
     }
 
     @Test
-    public void testBeanFactory(){
+    public void testBeanFactory() {
         // ApplicationContext接口的超级父接口是：BeanFactory（翻译为Bean工厂，就是能够生产Bean对象的一个工厂对象。）
         // BeanFactory是IoC容器的顶级接口。
         // Spring的IoC容器底层实际上使用了：工厂模式。
@@ -70,7 +70,7 @@ public class FirstSpringTest {
     }
 
     @Test
-    public void testBeginInitBean(){
+    public void testBeginInitBean() {
         // 注意：不是在调用getBean()方法的时候创建对象，执行以下代码的时候，就会实例化对象。
         new ClassPathXmlApplicationContext("spring.xml");
 
