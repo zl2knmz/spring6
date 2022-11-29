@@ -19,7 +19,7 @@ public class User {
     }
 
     public User (String str) {
-        
+
         System.out.println("User无参构造方法调用。");
     }
 

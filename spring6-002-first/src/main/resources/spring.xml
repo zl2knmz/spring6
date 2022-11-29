@@ -17,4 +17,7 @@
      -->
     <bean id="userBean" class="com.liang.bean.User"></bean>
 
+    <!-- java的类 -->
+    <bean id="nowDate" class="java.util.Date"></bean>
+
 </beans>
