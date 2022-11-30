@@ -1,6 +1,8 @@
 package com.liang.test;
 
 import org.junit.Test;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.BeanFactory;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;
@@ -14,6 +16,19 @@ import java.util.Date;
  * @date 2022/11/28 23:07
  */
 public class FirstSpringTest {
+    /**
+     * 使用log4j2记录日志
+     * 第一步：创建日志记录器对象
+     * 获取FirstSpringTest类的日志记录器对象，就是说只要是FirstSpringTest类中的代码执行记录日志的话，就输出相关的日志信息。
+     *  Logger logger = LoggerFactory.getLogger(FirstSpringTest.class);
+     *
+     * 第二步：记录日志，根据不同的级别来输出日志
+     *  logger.info("我是一条消息");
+     *  logger.debug("我是一条调试消息");
+     *  logger.error("我是一条错误消息");
+     *
+     */
+    Logger logger = LoggerFactory.getLogger(FirstSpringTest.class);
 
     @Test
     public void testFirstSpringCode() {
@@ -75,4 +90,13 @@ public class FirstSpringTest {
         new ClassPathXmlApplicationContext("spring.xml");
 
     }
+
+    @Test
+    public void testLogger() {
+        // 第二步：记录日志，根据不同的级别来输出日志
+        logger.info("我是一条消息");
+        logger.debug("我是一条调试消息");
+        logger.error("我是一条错误消息");
+    }
+
 }
