@@ -5,10 +5,8 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.liang</groupId>
-    <artifactId>spring6-002-first</artifactId>
+    <artifactId>spring6-003-dependency-injection</artifactId>
     <version>1.0.0</version>
-
-    <!--  打包方式jar，学习spring项目可以不是web项目，普通的Java项目即可。  -->
     <packaging>jar</packaging>
 
     <!-- 配置多个仓库 -->
@@ -24,8 +22,6 @@
     <!--  依赖  -->
     <dependencies>
         <!-- spring context依赖 -->
-        <!-- 当你引入spring context依赖之后，表示将spring的基础依赖引入了 -->
-        <!-- 如果你想使用spring的jdbc，或者说其他的tx，那么还需要再次添加依赖 -->
         <dependency>
             <groupId>org.springframework</groupId>
             <artifactId>spring-context</artifactId>
@@ -52,8 +48,8 @@
             <version>2.19.0</version>
         </dependency>
 
+        <!--  -->
     </dependencies>
-
 
     <properties>
         <maven.compiler.source>17</maven.compiler.source>
