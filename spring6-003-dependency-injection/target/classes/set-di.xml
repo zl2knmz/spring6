@@ -3,27 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 定义bean -->
     <bean id="orderDaoBean" class="com.liang.dao.OrderDao"></bean>
 
-    <bean id="userDao" class="com.liang.dao.UserDao"></bean>
-
-    <bean id="vipDao" class="com.liang.dao.VipDao"></bean>
-
-    <bean id="csBean" class="com.liang.service.CustomerService">
-        <!-- 构造注入-通过下标注入 -->
-        <constructor-arg index="0" ref="userDao"></constructor-arg>
-        <constructor-arg index="1" ref="vipDao"></constructor-arg>
+    <bean id="orderServiceBean" class="com.liang.service.OrderService">
+        <!-- 引入外部bean -->
+        <property name="orderDao" ref="orderDaoBean"></property>
     </bean>
 
-    <bean id="csBean2" class="com.liang.service.CustomerService">
-        <!-- 构造注入-通过name注入 -->
-        <constructor-arg name="userDao" ref="userDao"></constructor-arg>
-        <constructor-arg name="vipDao" ref="vipDao"></constructor-arg>
-    </bean>
-
-    <bean id="csBean3" class="com.liang.service.CustomerService">
-        <!-- 构造注入-通过name注入 -->
-        <constructor-arg ref="vipDao"></constructor-arg>
-        <constructor-arg ref="userDao"></constructor-arg>
+    <bean id="orderServiceBean2" class="com.liang.service.OrderService">
+        <!-- 引入内部bean -->
+        <property name="orderDao">
+            <bean class="com.liang.dao.OrderDao"></bean>
+        </property>
     </bean>
 </beans>

@@ -2,6 +2,7 @@ package com.liang.test;
 
 import com.liang.dao.UserDao;
 import com.liang.service.CustomerService;
+import com.liang.service.OrderService;
 import com.liang.service.UserService;
 import org.junit.Test;
 import org.springframework.context.ApplicationContext;
@@ -12,6 +13,18 @@ import org.springframework.context.support.ClassPathXmlApplicationContext;
  * @date 2022/12/1 21:33
  */
 public class SpringDITest {
+
+    @Test
+    public void testOrderDI(){
+        ApplicationContext ac = new ClassPathXmlApplicationContext("set-di.xml");
+        // 引入外部bean
+        OrderService orderService = ac.getBean("orderServiceBean", OrderService.class);
+        orderService.generate();
+
+        // 引入内部bean
+        OrderService orderService2 = ac.getBean("orderServiceBean2", OrderService.class);
+        orderService2.generate();
+    }
 
     @Test
     public void testCustomerDI(){
@@ -41,7 +54,6 @@ public class SpringDITest {
         System.out.println(userService);
 
         userService.insert();
-
         userService.insertVip();
     }
 }

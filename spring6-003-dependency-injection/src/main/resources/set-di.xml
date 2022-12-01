@@ -3,5 +3,18 @@
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
 
+    <!-- 定义bean -->
     <bean id="orderDaoBean" class="com.liang.dao.OrderDao"></bean>
+
+    <bean id="orderServiceBean" class="com.liang.service.OrderService">
+        <!-- 引入外部bean -->
+        <property name="orderDao" ref="orderDaoBean"></property>
+    </bean>
+
+    <bean id="orderServiceBean2" class="com.liang.service.OrderService">
+        <!-- 引入内部bean -->
+        <property name="orderDao">
+            <bean class="com.liang.dao.OrderDao"></bean>
+        </property>
+    </bean>
 </beans>
