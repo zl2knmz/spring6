@@ -1,5 +1,6 @@
 package com.liang.test;
 
+import com.liang.bean.User;
 import com.liang.dao.UserDao;
 import com.liang.service.CustomerService;
 import com.liang.service.OrderService;
@@ -24,6 +25,10 @@ public class SpringDITest {
         // 引入内部bean
         OrderService orderService2 = ac.getBean("orderServiceBean2", OrderService.class);
         orderService2.generate();
+
+        // 基本数据类型
+        User userBean = ac.getBean("userBean", User.class);
+        System.out.println(userBean);
     }
 
     @Test

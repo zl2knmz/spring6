@@ -17,4 +17,10 @@
             <bean class="com.liang.dao.OrderDao"></bean>
         </property>
     </bean>
+
+    <bean id="userBean" class="com.liang.bean.User">
+        <!-- 基本数据类型用value，引用数据类型用ref -->
+        <property name="userName" value="张三"></property>
+        <property name="age" value="23"></property>
+    </bean>
 </beans>
