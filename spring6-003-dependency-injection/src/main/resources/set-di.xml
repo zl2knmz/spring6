@@ -23,4 +23,19 @@
         <property name="userName" value="张三"></property>
         <property name="age" value="23"></property>
     </bean>
+
+    <bean id="svt" class="com.liang.bean.SimpleValueType">
+        <property name="age" value="21"/>
+        <property name="age2" value="22"/>
+        <property name="userName" value="zhangsan"/>
+        <property name="flag" value="false"/>
+        <property name="flag2" value="true"/>
+        <property name="c" value="1"/>
+        <property name="c2" value="2"/>
+        <property name="clazz" value="java.lang.String"/>
+        <property name="season" value="SPRING"/>
+        <!-- <property name="date" value="2022-12-06 23:10:12"/>-->
+        <!-- Date如果是简单类型注入，必须写成如下格式（正常还是通过ref注入）-->
+        <property name="date" value="Tue Dec 06 23:14:37 CST 2022"/>
+    </bean>
 </beans>

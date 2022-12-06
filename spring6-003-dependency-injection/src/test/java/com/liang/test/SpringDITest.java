@@ -1,5 +1,6 @@
 package com.liang.test;
 
+import com.liang.bean.SimpleValueType;
 import com.liang.bean.User;
 import com.liang.dao.UserDao;
 import com.liang.service.CustomerService;
@@ -60,5 +61,14 @@ public class SpringDITest {
 
         userService.insert();
         userService.insertVip();
+    }
+
+    @Test
+    public void testSimpleValueTypeSet(){
+        // 测试set注入
+        ApplicationContext ac = new ClassPathXmlApplicationContext("set-di.xml");
+        SimpleValueType simpleValueType = ac.getBean("svt", SimpleValueType.class);
+        System.out.println(simpleValueType);
+
     }
 }
