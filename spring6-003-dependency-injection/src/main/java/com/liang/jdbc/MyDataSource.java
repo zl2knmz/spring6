@@ -14,6 +14,37 @@ import java.util.logging.Logger;
  * @date 2022/12/6 23:19
  */
 public class MyDataSource implements DataSource {
+    private String driver;
+    private String url;
+    private String userName;
+    private String password;
+
+    public void setDriver(String driver) {
+        this.driver = driver;
+    }
+
+    public void setUrl(String url) {
+        this.url = url;
+    }
+
+    public void setUserName(String userName) {
+        this.userName = userName;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
+
+    @Override
+    public String toString() {
+        return "MyDataSource{" +
+                "driver='" + driver + '\'' +
+                ", url='" + url + '\'' +
+                ", userName='" + userName + '\'' +
+                ", password='" + password + '\'' +
+                '}';
+    }
+
     @Override
     public Connection getConnection() throws SQLException {
         return null;

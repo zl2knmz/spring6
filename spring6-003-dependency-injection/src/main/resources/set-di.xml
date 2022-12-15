@@ -38,4 +38,12 @@
         <!-- Date如果是简单类型注入，必须写成如下格式（正常还是通过ref注入）-->
         <property name="date" value="Tue Dec 06 23:14:37 CST 2022"/>
     </bean>
+
+<!--    spring来管理数据源-->
+    <bean id="myDataSource" class="com.liang.jdbc.MyDataSource">
+        <property name="driver" value="com.mysql.cj.jdbc.Driver"/>
+        <property name="url" value="jdbc:mysql://localhost:3306/spring6"/>
+        <property name="userName" value="root"/>
+        <property name="password" value="12345678"/>
+    </bean>
 </beans>

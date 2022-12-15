@@ -3,6 +3,7 @@ package com.liang.test;
 import com.liang.bean.SimpleValueType;
 import com.liang.bean.User;
 import com.liang.dao.UserDao;
+import com.liang.jdbc.MyDataSource;
 import com.liang.service.CustomerService;
 import com.liang.service.OrderService;
 import com.liang.service.UserService;
@@ -69,6 +70,15 @@ public class SpringDITest {
         ApplicationContext ac = new ClassPathXmlApplicationContext("set-di.xml");
         SimpleValueType simpleValueType = ac.getBean("svt", SimpleValueType.class);
         System.out.println(simpleValueType);
+
+    }
+
+    @Test
+    public void testMyDataSource(){
+        // 简单使用
+        ApplicationContext ac = new ClassPathXmlApplicationContext("set-di.xml");
+        MyDataSource myDataSource = ac.getBean("myDataSource", MyDataSource.class);
+        System.out.println(myDataSource);
 
     }
 }
