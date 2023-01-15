@@ -1,6 +1,8 @@
 package com.liang.test;
 
+import com.liang.bean.Clazz;
 import com.liang.bean.SimpleValueType;
+import com.liang.bean.Student;
 import com.liang.bean.User;
 import com.liang.dao.UserDao;
 import com.liang.jdbc.MyDataSource;
@@ -79,6 +81,18 @@ public class SpringDITest {
         ApplicationContext ac = new ClassPathXmlApplicationContext("set-di.xml");
         MyDataSource myDataSource = ac.getBean("myDataSource", MyDataSource.class);
         System.out.println(myDataSource);
+
+    }
+
+    @Test
+    public void testCascade(){
+        // 简单使用
+        ApplicationContext ac = new ClassPathXmlApplicationContext("cascade.xml");
+        Student student = ac.getBean("studentBean", Student.class);
+        System.out.println(student);
+
+        Clazz clazz = ac.getBean("clazzBean", Clazz.class);
+        System.out.println(clazz);
 
     }
 }
