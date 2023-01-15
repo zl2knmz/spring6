@@ -102,12 +102,12 @@ public class SimpleValueType {
                         Class.class == type);
     }
 
-    public enum Season {
-        SPRING,
-        SUMMER,
-        AUTUMN,
-        WINTER
-    }
+//    public enum Season {
+//        SPRING,
+//        SUMMER,
+//        AUTUMN,
+//        WINTER
+//    }
 
     public static void main(String[] args) {
         System.out.println(new Date());
